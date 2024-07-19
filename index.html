@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
+        .container {
+            text-align: center;
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #333;
+            color: #ffffff;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="message">Enter Password to Win 10K Tokens</h1>
+        <input type="text" id="password" placeholder="Password">
+        <button onclick="checkPassword()">Enter</button>
+    </div>
+
+    <script>
+        const correctPassword = 'quacsexybeast';
+        const hint = 'vzfhxjcdgjfxy'; // Obfuscated hint
+        let hintShown = false;
+
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === correctPassword) {
+                document.body.innerHTML = '<h1>ping quacks in the general channel saying "ppcode"</h1>';
+            } else {
+                if (!hintShown) {
+                    document.getElementById('message').innerText = 'Incorrect password! Hint: ' + hint;
+                    hintShown = true;
+                } else {
+                    alert('Incorrect password!');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
